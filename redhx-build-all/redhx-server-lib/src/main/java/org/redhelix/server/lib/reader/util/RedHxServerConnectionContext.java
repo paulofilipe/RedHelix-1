@@ -15,6 +15,7 @@ package org.redhelix.server.lib.reader.util;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import org.apache.commons.codec.binary.Base64;
 import org.apache.olingo.client.api.ODataClient;
 import org.apache.olingo.client.api.communication.request.retrieve.ODataEntityRequest;
@@ -136,6 +137,23 @@ public final class RedHxServerConnectionContext {
     }
 
     return req;
+  }
+  /**
+   * get an OData entity request for a Redfish Managers. The user name an password created when the
+   * connection was opened will be used.
+   *
+   * @return
+   */
+  public ODataEntityRequest<ClientEntity> getManagersEntityRequest() {
+	  URI chassisUri = serviceRootLocator.getUri(RedHxServiceRootIdEum.MANAGERS);
+	  ODataEntityRequest<ClientEntity> req =
+			  client.getRetrieveRequestFactory().getEntityRequest(chassisUri);
+	  
+	  if (userName != null) {
+		  req = setServerAuth(req);
+	  }
+	  
+	  return req;
   }
 
   /**

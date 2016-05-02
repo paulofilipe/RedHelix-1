@@ -17,7 +17,7 @@ import org.redhelix.core.account.service.RedHxAccountService;
 import org.redhelix.core.chassis.RedHxChassisCollection;
 import org.redhelix.core.computer.system.RedHxComputerSystemCollection;
 import org.redhelix.core.event.service.RedHxEventService;
-import org.redhelix.core.manager.collection.RedHxManagerCollection;
+import org.redhelix.core.manager.RedHxManagerCollection;
 import org.redhelix.core.message.vignette.RedHxMessageVignette;
 import org.redhelix.core.message.vignette.registry.file.collection.RedHxMessageVignetteRegistryFileCollection;
 import org.redhelix.core.schema.file.collection.RedHxSchemaFileCollection;
